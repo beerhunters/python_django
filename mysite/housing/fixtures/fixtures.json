@@ -1,0 +1,37 @@
+[
+    {
+        "model": "housing.roomtype",
+        "pk": 1,
+        "fields": {
+            "title": "Квартира"
+        }
+    },
+    {
+        "model": "housing.roomtype",
+        "pk": 2,
+        "fields": {
+            "title": "Дом"
+        }
+    },
+    {
+        "model": "housing.roomcount",
+        "pk": 1,
+        "fields": {
+            "count": 1
+        }
+    },
+    {
+        "model": "housing.roomcount",
+        "pk": 2,
+        "fields": {
+            "count": 2
+        }
+    },
+    {
+        "model": "housing.roomcount",
+        "pk": 3,
+        "fields": {
+            "count": 3
+        }
+    }
+]

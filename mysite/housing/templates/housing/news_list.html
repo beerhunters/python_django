@@ -1,0 +1,22 @@
+{% extends 'housing/base.html' %}
+
+{% block title %}
+    Лента новостей
+{% endblock %}
+
+{% block body %}
+    <h1>Лента новостей</h1>
+    {% if news %}
+        <div>
+        {% for item in news %}
+            <div class="news-item">
+                <h2>{{ item.title }}</h2>
+                <p>{{ item.text }}</p>
+                <p>{{ item.date }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h3>Список новостей пуст</h3>
+        </div>
+    {% endif %}
+{% endblock %}

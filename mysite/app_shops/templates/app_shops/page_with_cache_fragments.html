@@ -1,0 +1,13 @@
+Магазины
+{% load cache %}
+{% cache 500 footer %}
+{% block shop_list %}
+    {% for item in shops%}
+        <li>
+        <p>{{ item.name }}</p>
+        </li>
+    
+    {% endfor %}
+
+{% endblock %}
+{% endcache %}

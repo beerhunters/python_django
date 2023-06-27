@@ -1,0 +1,23 @@
+{% extends 'myauth/base.html' %}
+
+{% block title %}
+    User #{{ user.pk }}
+{% endblock %}
+
+{% block body %}
+    <h1>Details:</h1>
+        {% if user.profile.avatar %}
+            <img src="{{ user.profile.avatar.url }}" alt="{{ user.username }}'s avatar" width="220" height="200">
+        {% else %}
+            <p>No avatar</p>
+        {% endif %}
+        <h2>Info</h2>
+        <p>Username: {{ user.username }}</p>
+        <p>First name: {{ user.first_name }}</p>
+        <p>Last name: {{ user.last_name }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Bio: {{ user.profile.bio }}</p>
+        {% if request.user.is_staff or user == request.user %}
+            <a href="{% url 'myauth:avatar-upload' %}?user_id={{ user.profile.user_id }}">Upload avatar</a>
+        {% endif %}
+{% endblock %}
